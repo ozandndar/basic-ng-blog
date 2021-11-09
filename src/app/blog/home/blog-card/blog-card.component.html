@@ -1,0 +1,33 @@
+<div class="card" [routerLink]="['/blog-post', postId]">
+    <div class="card-header">
+        <img src="{{ owner.picture }}" alt="">
+        <span>{{ owner.title }} </span>
+        <span>{{ owner.firstName }} </span>
+        <span>{{ owner.lastName }}</span>
+    </div>
+    <div class="card-body row">
+        <div class="col-md-6 col-xs-12">
+            <div class="card-image">
+                <img src="{{ image }}" alt="" class="w-100">
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <div class="card-desc">
+                <p><strong>{{ text }}</strong></p>
+                <div><small>{{ publishDate }}</small></div>
+                <span *ngFor="let tag of tags" class="badge badge-info mr-1">{{ tag }}</span>
+                <div class="like">
+                    <fa-icon [icon]="faThumbsUp"></fa-icon> {{ likes }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <p>{{ postId }}</p>
+<p>{{ image }}</p>
+<p>{{ likes }}</p>
+<p>{{ tags | json }}</p>
+<p>{{ owner | json }}</p>
+<p>{{ publishDate }}</p>
+<p>{{ text }}</p> -->

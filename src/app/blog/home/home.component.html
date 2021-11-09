@@ -1,0 +1,12 @@
+<div class="container">
+    <div *ngIf="!data">
+        <app-loading></app-loading>
+    </div>
+
+    <div class="row" *ngIf="data">
+        <app-blog-card *ngFor="let post of data.data" class="col-md-6 col-xs-12" [postId]="post.id" [image]="post.image"
+            [likes]="post.likes" [tags]="post.tags" [owner]="post.owner" [publishDate]="post.publishDate.split('T')[0]"
+            [text]="post.text">
+        </app-blog-card>
+    </div>
+</div>

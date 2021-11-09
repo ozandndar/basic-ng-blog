@@ -1,0 +1,34 @@
+<div class="container">
+
+    <div *ngIf="!blog">
+        <app-loading></app-loading>
+    </div>
+
+    <div *ngIf="blog" class="single-blog">
+        <div class="row">
+            <div class="col-md-6 col-xs-12">
+                <img src="{{ blog.image }}" alt="" class="w-100 blog-cover">
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <h3>{{ blog.text }}</h3>
+
+                <div><small>{{ blog.publishDate }}</small></div>
+                <span *ngFor="let tag of blog.tags" class="badge badge-info mr-1">{{ tag }}</span>
+                <div class="like">
+                    <fa-icon [icon]="faThumbsUp"></fa-icon> {{ blog.likes }}
+                </div>
+
+                <hr>
+
+                <div class="owner">
+                    <img src="{{ blog.owner.picture }}" alt="">
+                    <span>{{ blog.owner.title }} </span>
+                    <span>{{ blog.owner.firstName }} </span>
+                    <span>{{ blog.owner.lastName }}</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
